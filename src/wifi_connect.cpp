@@ -9,5 +9,7 @@ void connect_wifi(const char* ssid, const char* password){
   Serial.println("");
   Serial.print("Connected to WiFi network with IP Address: ");
   Serial.println(WiFi.localIP());
+  Serial.print("ESP32 Mac Address : ");
+  Serial.println(WiFi.macAddress());
 
 }

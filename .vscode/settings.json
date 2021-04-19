@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "arduino.h": "c",
-        "tuple": "c"
+        "tuple": "c",
+        "device.h": "c"
     }
 }
