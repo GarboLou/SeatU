@@ -14,10 +14,10 @@ occupied by items, and unoccupied. The sensing unit will combine different types
 infrared sensor and the ultrasonic sensor, to determine the state of each seat. Then the occupancy data will
 be sent to the cloud for the web interface application to visualize seat availability.
 
-<img src ="https://github.com/LinHangzheng/SeatU/image/visual_aid.jpg" width = "350" alt = "visaul_aid"/>
+<img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/visual_aid.jpg" width = "600" alt = "visaul_aid"/>
 
 # Block Design
-<img src ="https://github.com/LinHangzheng/SeatU/image/block_diagram.jpg" width = "350" alt = "block_diagram"/>
+<img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/block_diagram.jpg" width = "600" alt = "block_diagram"/>
 
 # Browser UI Design
-<img src ="https://github.com/LinHangzheng/SeatU/image/browser_design.jpg" width = "350" alt = "browser_ui_design"/>
+<img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/browser_design.jpg" width = "600" alt = "browser_ui_design"/>
