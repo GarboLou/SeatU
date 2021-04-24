@@ -1,4 +1,11 @@
 #include <device.h>
+/*
+ * Discription: Constructor for the Device class
+ * Input: None
+ * Output: None
+ * Side effect: It will create N (up to 4) sensor module class object
+ */
+
 Device::Device(){
   sensor_module *module1 = new sensor_module(IR_PIN1, TRIG_PIN1, ECHO_PIN1);
   // module2 = new sensor_module(IR_PIN2, TRIG_PIN2, ECHO_PIN2);
@@ -8,6 +15,13 @@ Device::Device(){
 
 }
 
+/*
+ * Discription: Fill the data into the sensor modules' queues, and then
+                call the sensor' function to calculate the indicators(Mean and Variance)
+ * Input: None
+ * Output: None
+ * Side effect: The indicators for each sensor will be prepared
+ */
 void Device::fill_data(){
   // fill the data into sensors' queues
   for (int i =0; i<DATA_BATCH; i++){
@@ -22,6 +36,14 @@ void Device::fill_data(){
   }
 }
 
+/*
+ * Discription: Fill the data into the sensor modules' queues, and then
+                call the sensor' function to calculate the indicators(Mean and Variance)
+ * Input: int module_idx: The index for the sensor module(0 to 3)
+ * Output: indicators_t indicator: the indicator structure (contains mean  
+ *                                 and variance for one sensor pair)
+ * Side effect: The indicator can be received from the outside
+ */
 indicators_t Device::get_indicator(int module_idx){
   indicators_t indicator = sensor_modules[module_idx].get_indicators();
   return indicator;

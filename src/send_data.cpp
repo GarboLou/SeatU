@@ -1,4 +1,12 @@
 #include <send_data.h>
+/*
+ * Discription: Send the data to the sever(PHP file)
+ * Input: const char* serverName: Our sever name (It's a PHP web address)
+ *        Device* device: Device class object
+ * Output: None
+ * Side effect: The data will be sent to the sever, then the sever can put the data 
+ *              into the database for later use
+ */
 void send_data(const char* serverName, Device* device){
   //Check WiFi connection status
   if(WiFi.status()== WL_CONNECTED){

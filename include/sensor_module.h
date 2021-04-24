@@ -19,7 +19,7 @@ class sensor_module{
         indicators_t indicators;
         priority_queue<float> US_queue;
         priority_queue<float> IR_queue;
-        void get_indicator(priority_queue<float> *q, float *mean, float *variance);
+        void cal_indicator(priority_queue<float> *q, float *mean, float *variance);
     public:
         float infrared();
         float ultrasonic();
