@@ -15,7 +15,7 @@ void setup() {
   // set pin mode for infrared ray sensor
   pinMode(IR_PIN1, INPUT);  
   // connect the wifi 
-  // connect_wifi(ssid,password);
+  connect_wifi(ssid,password);
 }
 
 // ESP-32 main function
@@ -32,6 +32,6 @@ void loop() {
   Serial.print(",");
   Serial.println(indicator.IR_variance);
   // send the data to sever
-  // send_data(serverName,device);
+  send_data(serverName,device);
   delay(500);    
 }
