@@ -7,7 +7,7 @@
  * Side effect: The data will be sent to the sever, then the sever can put the data 
  *              into the database for later use
  */
-void send_data(const char* serverName, Device* device){
+void send_data(const char* serverName, indicators_t* indicator){
   //Check WiFi connection status
   if(WiFi.status()== WL_CONNECTED){
     HTTPClient http;
@@ -15,9 +15,8 @@ void send_data(const char* serverName, Device* device){
     http.begin(serverName);
     // Specify content-type header
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-    indicators_t indicator = device->get_indicator(0);
-    String httpRequestData = "DeviceID=1&TableID=1&US_Mean=" + String(indicator.US_mean)+"&IR_Mean="+String(indicator.IR_mean)
-                        + "&US_Var=" + String(indicator.US_variance) + "&IR_Var=" + String(indicator.IR_variance) + "";
+    String httpRequestData = "DeviceID="+String(indicator->ID)+"&TableID="+String(TABLE_ID)+"&US_Mean=" + String(indicator->US_mean)+"&IR_Mean="+String(indicator->IR_mean)
+                        + "&US_Var=" + String(indicator->US_variance) + "&IR_Var=" + String(indicator->IR_variance) + "";
     Serial.print("httpRequestData: ");
     Serial.println(httpRequestData);
     // Send HTTP POST request

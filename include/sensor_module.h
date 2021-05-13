@@ -9,6 +9,7 @@ struct indicators_t{
     float US_mean;
     float IR_variance;
     float US_variance;
+    int ID;
 };
 
 class sensor_module{
@@ -16,6 +17,7 @@ class sensor_module{
         int IR_pin;
         int US_triger_pin;
         int US_echo_pin;
+        int sensor_id;
         indicators_t indicators;
         priority_queue<float> US_queue;
         priority_queue<float> IR_queue;
@@ -25,11 +27,11 @@ class sensor_module{
         float ultrasonic();
         void fill_queue();
         void calculate_indicators();
-        void init_indicators();
+        void init_indicators(int sensor_id);
         indicators_t get_indicators();
         sensor_module(){};
-        sensor_module(int IR_pin, int US_triger_pin, int US_echo_pin):IR_pin(IR_pin),US_triger_pin(US_triger_pin),US_echo_pin(US_echo_pin){
-            init_indicators();
+        sensor_module(int IR_pin, int US_triger_pin, int US_echo_pin, int sensor_id):IR_pin(IR_pin),US_triger_pin(US_triger_pin),US_echo_pin(US_echo_pin),sensor_id(sensor_id){
+            init_indicators(sensor_id);
         }
 };
 

@@ -99,7 +99,7 @@ void sensor_module::cal_indicator(priority_queue<float> *q, float *mean, float *
  * Side effect: The queue in the sensor module will be cleaned, the indicators will be filled
  */
 void sensor_module::calculate_indicators(){
-  init_indicators();
+  init_indicators(sensor_id);
   cal_indicator(&US_queue, &indicators.US_mean, &indicators.US_variance);
   cal_indicator(&IR_queue, &indicators.IR_mean, &indicators.IR_variance);
 }
@@ -121,11 +121,12 @@ indicators_t sensor_module::get_indicators(){
  * output: None
  * Side effect: The indicators in the sensor module will be initialized
  */
-void sensor_module::init_indicators(){
+void sensor_module::init_indicators(int sensor_id){
   indicators.IR_mean = 0;
   indicators.US_mean = 0;
   indicators.IR_variance = 0;
   indicators.US_variance = 0;
+  indicators.ID = sensor_id;
 }
 
 

@@ -12,26 +12,24 @@ void setup() {
   // set pin mode for ultrasonic sensor
   pinMode(TRIG_PIN1, OUTPUT);
   pinMode(ECHO_PIN1, INPUT);
+  pinMode(TRIG_PIN2, OUTPUT);
+  pinMode(ECHO_PIN2, INPUT);
   // set pin mode for infrared ray sensor
   pinMode(IR_PIN1, INPUT);  
+  pinMode(IR_PIN2, INPUT);  
   // connect the wifi 
   connect_wifi(ssid,password);
 }
 
 // ESP-32 main function
 void loop() {  
-  // fill the data into the device's queue
-  device->fill_data();
   // get the indicator from the device
-  indicators_t indicator = device->get_indicator(0);
-  Serial.print(indicator.US_mean);
-  Serial.print(",");
-  Serial.print(indicator.IR_mean);
-  Serial.print(",");
-  Serial.print(indicator.US_variance);
-  Serial.print(",");
-  Serial.println(indicator.IR_variance);
-  // send the data to sever
-  send_data(serverName,device);
+  device->fill_data();
+  for (int module_idx = 0; module_idx < SENSOR_N; module_idx++){
+    // fill the data into the device's queue
+    indicators_t indicator = device->get_indicator(module_idx);
+    // send the data to sever
+    send_data(serverName,&indicator);
+  }
   delay(500);    
 }

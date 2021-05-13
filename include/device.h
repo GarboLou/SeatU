@@ -13,6 +13,7 @@ class Device{
         Device();
         void fill_data();
         indicators_t get_indicator(int module_idx);
+        indicators_t* get_indicators();
 };
 
 #endif
