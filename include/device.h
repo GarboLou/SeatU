@@ -11,7 +11,7 @@ class Device{
         sensor_module sensor_modules[SENSOR_N];
     public:
         Device();
-        void fill_data();
+        void fill_data(int module_idx);
         indicators_t get_indicator(int module_idx);
         indicators_t* get_indicators();
 };

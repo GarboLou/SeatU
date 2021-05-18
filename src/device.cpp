@@ -11,6 +11,8 @@ Device::Device(){
   sensor_module *module2 = new sensor_module(IR_PIN2, TRIG_PIN2, ECHO_PIN2, 2);
   sensor_module *module3 = new sensor_module(IR_PIN3, TRIG_PIN3, ECHO_PIN3, 3);
   sensor_module *module4 = new sensor_module(IR_PIN4, TRIG_PIN4, ECHO_PIN4, 4);
+  // module3 = new sensor_module(IR_PIN3, TRIG_PIN3, ECHO_PIN3);
+  // module4 = new sensor_module(IR_PIN4, TRIG_PIN4, ECHO_PIN4);
   sensor_modules[0] = *module1;
   sensor_modules[1] = *module2;
   sensor_modules[2] = *module3;
@@ -25,19 +27,15 @@ Device::Device(){
  * Output: None
  * Side effect: The indicators for each sensor will be prepared
  */
-void Device::fill_data(){
+void Device::fill_data(int module_idx){
   // fill the data into sensors' queues
   for (int i =0; i<DATA_BATCH; i++){
-    for (int module_idx=0; module_idx<SENSOR_N; module_idx++){
       sensor_modules[module_idx].fill_queue();
       delay(COLLECT_DELAY);
-    }
   }
   
   // after fill the data, calculate the indicators
-  for (int module_idx=0; module_idx<SENSOR_N; module_idx++){
-    sensor_modules[module_idx].calculate_indicators();
-  }
+  sensor_modules[module_idx].calculate_indicators();
 }
 
 /*
