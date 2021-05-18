@@ -2,6 +2,7 @@
 #include <wifi_connect.h>
 #include <device.h>
 #include <send_data.h>
+#include <time.h>
 using namespace std;
 
 Device *device = new Device();
@@ -25,11 +26,14 @@ void setup() {
 void loop() {  
   // get the indicator from the device
   device->fill_data();
-  for (int module_idx = 0; module_idx < SENSOR_N; module_idx++){
-    // fill the data into the device's queue
-    indicators_t indicator = device->get_indicator(module_idx);
-    // send the data to sever
-    send_data(serverName,&indicator);
-  }
+  // for (int module_idx = 0; module_idx < SENSOR_N; module_idx++){
+  //   // fill the data into the device's queue
+  //   indicators_t indicator = device->get_indicator(module_idx);
+  //   // send the data to sever
+  //   send_data(serverName,&indicator);
+  // }
+  indicators_t indicator = device->get_indicator(0);
+  
+  speed_test(serverName);
   delay(500);    
 }
