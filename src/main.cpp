@@ -15,9 +15,15 @@ void setup() {
   pinMode(ECHO_PIN1, INPUT);
   pinMode(TRIG_PIN2, OUTPUT);
   pinMode(ECHO_PIN2, INPUT);
+  pinMode(TRIG_PIN3, OUTPUT);
+  pinMode(ECHO_PIN3, INPUT);
+  pinMode(TRIG_PIN4, OUTPUT);
+  pinMode(ECHO_PIN4, INPUT);
   // set pin mode for infrared ray sensor
   pinMode(IR_PIN1, INPUT);  
   pinMode(IR_PIN2, INPUT);  
+  pinMode(IR_PIN3, INPUT);  
+  pinMode(IR_PIN4, INPUT);  
   // connect the wifi 
   connect_wifi(ssid,password);
 }
