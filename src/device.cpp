@@ -32,7 +32,7 @@ void Device::fill_data(int module_idx){
   for (int i =0; i<DATA_BATCH; i++){
       sensor_modules[module_idx].fill_queue();
       delay(COLLECT_DELAY);
-  }
+    }
   
   // after fill the data, calculate the indicators
   sensor_modules[module_idx].calculate_indicators();

@@ -1,0 +1,21 @@
+h3{
+    font-size: 40px;
+}
+
+.available{
+    fill: #D5E8D4; 
+    stroke:#82B366; 
+    stroke-width:1;
+}
+
+.byitems{
+    fill: #FFF2CC; 
+    stroke:#B46504; 
+    stroke-width:1;
+}
+
+.bypeople{
+    fill: #F8CECC; 
+    stroke:#B85450; 
+    stroke-width:1;
+}

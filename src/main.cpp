@@ -38,5 +38,5 @@ void loop() {
     // send the data to sever
     send_data(serverName,&indicator);
   }
-  delay(500);    
+  delay(2000);    
 }
