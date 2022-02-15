@@ -1,6 +1,6 @@
 # SeatU
 # Introduction
-<img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/SeatU.jpg" width = "600" alt = "SeatU"/>
+<img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/SeatU.jpg" width = "400" alt = "SeatU"/>
 The school library is one of the student’s favorite places to study as it can provide them with a silent
 environment. However, our team noticed that sometimes it is very difficult to find a seat in the library,
 especially during exam weeks. There is a complaint about the unknown seat availability in our campus
