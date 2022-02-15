@@ -1,5 +1,6 @@
 # SeatU
 # Introduction
+<img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/SeatU.jpg" width = "600" alt = "SeatU"/>
 The school library is one of the student’s favorite places to study as it can provide them with a silent
 environment. However, our team noticed that sometimes it is very difficult to find a seat in the library,
 especially during exam weeks. There is a complaint about the unknown seat availability in our campus
@@ -19,5 +20,14 @@ be sent to the cloud for the web interface application to visualize seat availab
 # Block Design
 <img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/block_diagram.jpg" width = "600" alt = "block_diagram"/>
 
+# Mechanical Design of the Sensing Unit
+<img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/PCB.jpg" width = "600" alt = "PCB"/>
+
+# PCB Layout 
+<img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/CAD_design.jpg" width = "600" alt = "CAD_design"/>
+
 # Browser UI Design
 <img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/browser_design.jpg" width = "600" alt = "browser_ui_design"/>
+
+# Flowchart
+<img src ="https://github.com/LinHangzheng/SeatU/raw/main/image/flowchart.jpg" width = "600" alt = "flowchart"/>
